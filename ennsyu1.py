@@ -7,40 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def root():
     # HTMLでWebフォームを記述 --- (*2)
-    return """
-    <html><body>
-    <h2> 計算ページ </h2>
-    <form action="/add" method="post">
-      <input type="text" name="a"> +
-      <input type="tepyxt" name="b">
-      <input type="submit" value="足し算の結果">
-    </form>
-    <form action="/sub" method="post">
-      <input type="text" name="a"> -
-      <input type="text" name="b">
-      <input type="submit" value="引き算の結果">
-    </form>
-    <form action="/mult" method="post">
-      <input type="text" name="a"> *
-      <input type="text" name="b">
-      <input type="submit" value="掛け算の結果">
-    </form>
-
-    <form action="/div" method="post">
-      <input type="text" name="a"> /
-      <input type="text" name="b">
-      <input type="submit" value="割り算の結果">
-    </form>
-
-    <form action="/power" method="post">
-      <input type="text" name="a"> ^
-      <input type="text" name="b">
-      <input type="submit" value="べき乗の結果">
-    </form>
-
-   
-
-    """
+    return render_template("calculator.html")
 
 # フォームの値を受け取って結果を表示 --- (*3)
 @app.route("/power", methods=["post"])
