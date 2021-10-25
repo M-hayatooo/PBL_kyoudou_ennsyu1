@@ -3,7 +3,7 @@ FROM python:3.9-slim
 RUN apt-get update && apt-get install -y git
 
 # アプリのコードを clone してくる
-RUN git clone https://github.com/M-hayatooo/PBL_kyoudou_ennsyu1.git myapp
+RUN git clone https://github.com/M-hayatooo/web_app.git myapp
 
 WORKDIR /myapp
 
