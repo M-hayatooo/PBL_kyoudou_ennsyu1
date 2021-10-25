@@ -51,10 +51,8 @@ def div():
     return "<h1>" +str(a) +"÷"+str(b)+" ＝ " + str(r) + "</h1>" 
 
 
-
-
 # サーバーを起動
 if __name__ == "__main__":
     
     #port = int(os.environ.get("PORT", 9761))
-    app.run(debug=True, port=os.environ['PORT'])
+    app.run(debug=True, port=os.environ['PORT'], host="0.0.0.0")
